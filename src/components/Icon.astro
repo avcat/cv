@@ -1,0 +1,19 @@
+---
+import Icons from '../icons/icons.svg?url';
+
+export interface Props {
+  name: string;
+  class?: string;
+  width?: string;
+  height?: string;
+}
+
+const { name, class: className, width, height } = Astro.props;
+
+const classes = className ? 
+  'tr-svg ' + className
+  : 'tr-svg';
+---
+<svg class={classes} width={width} height={height}>
+  <use href={`${Icons}#${name}`}></use>
+</svg>

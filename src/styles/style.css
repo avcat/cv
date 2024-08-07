@@ -20,4 +20,8 @@
   .tr-link {
     @apply text-blue-500 transition duration-300 ease-out hover:text-blue-700;
   }
+
+  .tr-svg {
+    @apply transition duration-300 ease-out hover:scale-110;
+  }
 }
