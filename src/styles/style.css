@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  table {
+    @apply mt-1;
+  }
+
+  td {
+    @apply py-2;
+  }
+
+  svg {
+    @apply h-6 w-6;
+  }
+}
+
+@layer utilities {
+  .tr-link {
+    @apply text-blue-500 transition duration-300 ease-out hover:text-blue-700;
+  }
+}
