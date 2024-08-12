@@ -1,11 +1,6 @@
 ---
 import LayoutMain from '../layouts/LayoutMain.astro';
-import Icon from '../components/Icon.astro';
-
-const contacts = [
-  {icon: 'proton', title: 'arkadii.vodolazskyi@pm.me', url: 'mailto:arkadii.vodolazskyi@pm.me'},
-  {icon: 'telegram', title: 'av_cat', url: 'https://t.me/av_cat'},
-];
+import Contacts from '../components/cv/Contacts.astro';
 ---
 <LayoutMain title="CV">
   <div class="bg-slate-300 py-[8mm] print:py-0 font-Kanit text-base-cv">
@@ -13,52 +8,7 @@ const contacts = [
       <h2 class="text-center">Arkadii Vodolazskyi</h2>
       <h1 class="text-center">Wordpress Developer</h1>
   
-      <h3 class="mt-4">Contacts</h3>
-      <table>
-        <tr>
-          <td>
-            <a href="mailto:arkadii.vodolazskyi@pm.me">
-              <Icon name="proton" />
-            </a>
-          </td>
-          <td class="pl-3">
-            <a class="tr-link font-medium" href="mailto:arkadii.vodolazskyi@pm.me">arkadii.vodolazskyi@pm.me</a>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <a href="https://t.me/av_cat">
-              <Icon name="telegram" />
-            </a>
-          </td>
-          <td class="pl-3">
-            <a class="tr-link font-medium" href="https://t.me/av_cat">av_cat</a>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <a href="https://www.linkedin.com/in/avcat/">
-              <Icon name="linkedin" />
-            </a>
-          </td>
-          <td class="pl-3">
-            <a class="tr-link font-medium" href="https://www.linkedin.com/in/avcat/">avcat</a>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <a href="https://github.com/avcat">
-              <Icon name="github" />
-            </a>
-          </td>
-          <td class="pl-3">
-            <a class="tr-link font-medium" href="https://github.com/avcat">avcat</a>
-          </td>
-        </tr>
-      </table>
+      <Contacts />
     </div>
   </div>
 </LayoutMain>
