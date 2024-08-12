@@ -25,3 +25,15 @@
     @apply transition duration-300 ease-out hover:scale-110;
   }
 }
+
+@page {
+  size: A4 portrait ;
+  margin: 0;
+  padding: 0;
+}
+
+@media print {
+  astro-dev-toolbar {
+    display: none;
+  }
+}
