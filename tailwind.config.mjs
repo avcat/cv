@@ -16,7 +16,11 @@ export default {
         Prompt: ['Prompt', 'sans-serif'],
         Kanit: ['Kanit', 'sans-serif'],
       },
-      
+      fontSize: {
+        'sm-cv': '11pt',
+        'base-cv': '12pt',
+        'lg-cv': '14pt',
+      }
     },
   },
   plugins: [],

@@ -3,6 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  h1 {
+    @apply font-Prompt text-lg-cv font-semibold;
+  }
+
+  h2 {
+    @apply font-Prompt text-lg-cv;
+  }
+
+  h3 {
+    @apply uppercase font-medium;
+  }
+
   table {
     @apply mt-1;
   }

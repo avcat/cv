@@ -15,5 +15,6 @@ const classes = className ?
   : 'tr-svg';
 ---
 <svg class={classes} width={width} height={height}>
+  <title>{name}</title>
   <use href={`${Icons}#${name}`}></use>
 </svg>
