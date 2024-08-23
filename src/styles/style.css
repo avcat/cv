@@ -12,7 +12,7 @@
   }
 
   h3 {
-    @apply uppercase font-medium;
+    @apply uppercase font-semibold;
   }
 
   table {
@@ -25,6 +25,14 @@
 
   svg {
     @apply h-6 w-6;
+  }
+
+  a {
+    @apply tr-link font-medium;
+  }
+
+  ul {
+    @apply list-disc list-outside pl-4;
   }
 }
 
@@ -47,5 +55,13 @@
 @media print {
   astro-dev-toolbar {
     display: none;
+  }
+
+  /* 
+    Make sure the browser respects background colors while printing. 
+    https://developer.mozilla.org/en-US/docs/Web/CSS/print-color-adjust
+  */
+  .bg-dimmed {
+    print-color-adjust: exact;
   }
 }
