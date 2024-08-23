@@ -20,6 +20,9 @@ export default {
         'sm-cv': '11pt',
         'base-cv': '12pt',
         'lg-cv': '14pt',
+      },
+      gridTemplateColumns: {
+        'cv-work': 'minmax(0, 4cm) 1fr minmax(0, 5cm)',
       }
     },
   },
