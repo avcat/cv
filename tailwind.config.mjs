@@ -22,7 +22,7 @@ export default {
         'lg-cv': '14pt',
       },
       gridTemplateColumns: {
-        'cv-work': 'minmax(0, 5cm) 1fr minmax(0, 5.5cm)',
+        'cv-work': 'minmax(0, 5cm) 1fr',
       },
       colors: {
         'dimmed': '#eee',

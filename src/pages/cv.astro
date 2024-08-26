@@ -1,17 +1,218 @@
 ---
 import LayoutMain from '../layouts/LayoutMain.astro';
-import Contacts from '../components/cv/Contacts.astro';
-import Work from '../components/cv/Work.astro';
+import PageA4 from '../layouts/PageA4.astro';
+import Icon from '@components/Icon.astro';
+import { sanitizeUrl } from '@helpers';
+
+const contacts = [
+  {
+    url: 'mailto:arkadii.vodolazskyi@pm.me',
+    icon: 'proton', 
+    title: 'arkadii.vodolazskyi@pm.me', 
+  },
+  {
+    url: 'https://t.me/av_cat',
+    icon: 'telegram', 
+    title: 'av_cat', 
+  },
+  {
+    url: 'https://www.linkedin.com/in/avcat',
+    icon: 'linkedin', 
+    title: 'avcat', 
+  },
+  {
+    url: 'https://github.com/avcat',
+    icon: 'github', 
+    title: 'avcat', 
+  },
+];
+
+const work = [
+  [
+    {
+      date: 'Dec 2023',
+      company: {
+        title: 'Limestone Digital',
+        url: 'https://limestonedigital.com/',
+      },
+      position: 'PHP/Wordpress Developer', 
+      description: [
+        'Creating sites for American storage facilities with Codeigniter',
+        'Developing functionality and maintaining a product site on Wordpress + WPEngine',
+        'Maintaining 20+ environments on WPEngine',
+      ],
+    },
+    {
+      date: 'Mar 2023 — Dec 2023',
+      company: {
+        title: 'Redwerk',
+        url: 'https://redwerk.com/',
+      },
+      position: 'PHP/Wordpress Developer', 
+      description: [
+        'Wide maintenance of 8 corporate subdomains, implementing new functionality, pages, developing custom plugins',
+        'Implemented sorting of Case Studies and Testimonials based on client IP',
+        'Created a new content system, based on ACF Blocks',
+        'Improved legacy Content Builder',
+        'Close communication with PMs, DevOps, SEO specialists, designers, and other developers',
+      ],
+      sites: [
+        'https://redwerk.com/',
+        'https://qawerk.com/',
+        'https://bugcrawl.qawerk.com/',
+      ]
+    },
+    {
+      date: 'Sep 2021 — Feb 2023',
+      company: {
+        title: 'Zipy',
+        url: 'https://www.zipy.co.il/',
+      },
+      position: 'Wordpress Developer', 
+      description: [
+        'Created and maintained the whole front-end part of flormar.co.il',
+        'Site optimization and performance',
+        'Newsletter plugin and email development',
+        'Adding new features, fixing bugs',
+      ],
+      sites: [
+        'https://flormar.co.il/',
+        'https://www.wona.co.il/',
+      ]
+    },
+  ],
+  [
+    {
+      date: 'Nov 2020 — Aug 2021',
+      company: {
+        title: 'DevPro',
+        url: 'https://devpro.agency/',
+      },
+      position: 'Junior Wordpress Developer', 
+      description: [
+        'Full Wordpress site development from design to hosting',
+        'Adding functionality',
+        'Fixing bugs',
+      ],
+      sites: [
+        'https://beit-grand.odessa.ua/',
+        'https://bavaria.od.ua/',
+        'https://grili.com.ua/',
+        'https://med-spa.od.ua/',
+        'https://www.keentegro.com/',
+        'https://bellaesthetic.com.ua/',
+        'https://delicate.od.ua/',
+      ]
+    },
+  ]
+];
 ---
 <LayoutMain title="CV">
   <div class="bg-slate-300 py-[8mm] print:py-0 font-Kanit text-base-cv">
-    <div class="mx-auto h-a4 w-a4 bg-white p-[8mm]">
+    <PageA4>
       <h2 class="text-center">Arkadii Vodolazskyi</h2>
       <h1 class="text-center">Wordpress Developer</h1>
   
-      <Contacts />
+      <h3 class="mt-4">Contacts</h3>
 
-      <Work />
-    </div>
+      <table>
+        {contacts.map(contact => (
+          <tr>
+            <td>
+              <a href={contact.url}>
+                <Icon name={contact.icon} />
+              </a>
+            </td>
+            <td class="pl-3">
+              <a href={contact.url}>
+                {contact.title}
+              </a>
+            </td>
+          </tr>
+        ))}
+      </table>
+
+      <h3 class="mt-4">Work Experience</h3>
+
+      <div class="font-light">
+        {work[0].map(item => (
+          <div class="grid grid-cols-cv-work mt-3">
+            <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+              {item.date}
+            </time>
+      
+            <div class="px-3 py-2 bg-dimmed rounded-e-lg">
+              <h4>
+                <a href={item.company.url}>
+                  {item.company.title}
+                </a>
+              </h4>
+              <p>
+                {item.position}
+              </p>
+            </div>
+      
+            <div class="px-3 py-2">
+              {item.sites && item.sites.map(site => (
+                <a class="block" href={site}>
+                  {sanitizeUrl(site)}
+                </a>
+              ))}
+            </div>
+      
+            <div class="px-3 py-2 text-balance">
+              <ul>
+                {item.description && item.description.map(item => (
+                  <li>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </PageA4>
+
+    <PageA4>
+      <div class="font-light">
+        {work[1].map(item => (
+          <div class="grid grid-cols-cv-work mt-3">
+            <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+              {item.date}
+            </time>
+      
+            <div class="px-3 py-2 bg-dimmed rounded-e-lg">
+              <h4>
+                <a href={item.company.url}>
+                  {item.company.title}
+                </a>
+              </h4>
+              <p>
+                {item.position}
+              </p>
+            </div>
+      
+            <div class="px-3 py-2">
+              {item.sites && item.sites.map(site => (
+                <a class="block" href={site}>
+                  {sanitizeUrl(site)}
+                </a>
+              ))}
+            </div>
+      
+            <div class="px-3 py-2 text-balance">
+              <ul>
+                {item.description && item.description.map(item => (
+                  <li>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </PageA4>
   </div>
 </LayoutMain>

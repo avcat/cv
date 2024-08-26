@@ -38,7 +38,7 @@
 
 @layer utilities {
   .tr-link {
-    @apply text-blue-500 transition duration-300 ease-out hover:text-blue-700;
+    @apply text-blue-600 transition duration-300 ease-out hover:text-blue-800;
   }
 
   .tr-svg {
