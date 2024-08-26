@@ -115,22 +115,20 @@ const work = [
   
       <h3 class="mt-4">Contacts</h3>
 
-      <table>
+      <div class="mt-1 grid grid-cols-cv-contacts">
         {contacts.map(contact => (
-          <tr>
-            <td>
-              <a href={contact.url}>
-                <Icon name={contact.icon} />
-              </a>
-            </td>
-            <td class="pl-3">
-              <a href={contact.url}>
-                {contact.title}
-              </a>
-            </td>
-          </tr>
+          <div class="py-1.5">
+            <a href={contact.url}>
+              <Icon name={contact.icon} width="24" height="24" />
+            </a>
+          </div>
+          <div class="py-1.5 pl-3">
+            <a href={contact.url}>
+              {contact.title}
+            </a>
+          </div>
         ))}
-      </table>
+      </div>
 
       <h3 class="mt-4">Work Experience</h3>
 
