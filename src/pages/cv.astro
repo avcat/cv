@@ -106,6 +106,23 @@ const work = [
     },
   ]
 ];
+
+const projects = [
+  [
+    {
+      date: 'Dec 2023',
+      project: {
+        title: 'Custom Blocks',
+        url: 'https://github.com/avcat/custom-blocks',
+        icon: 'github',
+      },
+      description: [
+        'Wordpress plugin that utilizes ACF Blocks.',
+        'Component-based approach, easy to use and maintain, Git-friendly',
+      ],
+    }
+  ]
+];
 ---
 <LayoutMain title="CV">
   <div class="bg-slate-300 py-[8mm] print:py-0 font-Kanit text-base-cv">
@@ -197,6 +214,42 @@ const work = [
                   {sanitizeUrl(site)}
                 </a>
               ))}
+            </div>
+      
+            <div class="px-3 py-2 text-balance">
+              <ul>
+                {item.description && item.description.map(item => (
+                  <li>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-4">Projects</h3>
+
+      <div class="font-light">
+        {projects[0].map(item => (
+          <div class="grid grid-cols-cv-work mt-3">
+            <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+              {item.date}
+            </time>
+      
+            <div class="px-3 py-2 bg-dimmed rounded-e-lg">
+              <h4>
+                <a href={item.project.url}>
+                  {item.project.title}
+                </a>
+              </h4>
+            </div>
+      
+            <div class="px-3 py-2 flex items-center justify-center">
+              <a href={item.project.url}>
+                <Icon name={item.project.icon} width="24" height="24" />
+              </a>
             </div>
       
             <div class="px-3 py-2 text-balance">
