@@ -6,10 +6,11 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@helpers": ["src/helpers/helpers.js"],
-      "@icons": ["src/icons/*"],
-      "@layouts": ["src/layouts/*"],
-      "@pages": ["src/pages/*"],
-      "@styles": ["src/styles/*"],
+      "@icons/*": ["src/icons/*"],
+      "@images/*": ["src/images/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles/*"],
     }
   }
 }
