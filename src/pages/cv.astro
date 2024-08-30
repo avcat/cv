@@ -185,6 +185,22 @@ const projects = [
     },
   ]
 ];
+
+const educations = [
+  {
+    date: 'Sep 2013 — Dec 2018',
+    university: {
+      title: 'Odessa National Polytechnic University',
+      url: 'https://op.edu.ua/en',
+    },
+    specialty: 'Automation and computer-integrated technologies, master, hons.',
+    certificates: {
+      title: 'Other certificates',
+      url: 'https://www.linkedin.com/in/avcat/details/certifications/',
+      icon: 'linkedin',
+    }
+  },
+];
 ---
 <LayoutMain title="CV">
   <div class="bg-slate-300 py-[8mm] print:py-0 font-Kanit text-base-cv">
@@ -201,7 +217,6 @@ const projects = [
       <h1 class="text-center">Wordpress Developer</h1>
   
       <h3 class="mt-4">Contacts</h3>
-
       <div class="mt-1 grid grid-cols-cv-contacts">
         {contacts.map(contact => (
           <div class="py-1.5">
@@ -218,7 +233,6 @@ const projects = [
       </div>
 
       <h3 class="mt-4">Work Experience</h3>
-
       <div class="font-light">
         {work[0].map(item => (
           <div class="grid grid-cols-cv-work mt-3">
@@ -300,7 +314,6 @@ const projects = [
       </div>
 
       <h3 class="mt-4">Projects</h3>
-
       <div class="font-light">
         {projects[0].map(item => (
           <div class="grid grid-cols-cv-work mt-3">
@@ -334,6 +347,40 @@ const projects = [
           </div>
         ))}
       </div>
+    </PageA4>
+
+    <PageA4>
+      <h3 class="mt-4">Education</h3>
+      <div class="font-light">
+        {educations.map(item => (
+          <div class="grid grid-cols-cv-work mt-3">
+            <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+              {item.date}
+            </time>
+      
+            <div class="px-3 py-2 bg-dimmed rounded-e-lg">
+              <h4>
+                <a href={item.university.url}>
+                  {item.university.title}
+                </a>
+              </h4>
+            </div>
+      
+            <div class="px-3 py-2 col-start-2">
+              <p>
+                {item.specialty}
+              </p>
+              <a class="mt-2 flex items-center gap-2" href={item.certificates.url}>
+                See other certificates on
+                <Icon name={item.certificates.icon} width="20" height="20" />
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-4">Skills</h3>
+      <h3 class="mt-4">Languages</h3>
     </PageA4>
   </div>
 </LayoutMain>
