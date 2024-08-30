@@ -201,9 +201,92 @@ const educations = [
     }
   },
 ];
+
+const skills = [
+  {
+    domain: 'Programming Languages',
+    list: [
+      'HTML',
+      'CSS',
+      'JS',
+      'PHP',
+      'SQL',
+    ],
+  },
+  {
+    domain: 'Ecosystems',
+    list: [
+      'WordPress',
+      'WPEngine',
+      'Node.js',
+    ],
+  },
+  {
+    domain: 'Frameworks',
+    list: [
+      'Vue',
+      'SvelteKit',
+      'React',
+      'Laravel',
+      'Symfony',
+      'Codeigniter',
+    ],
+  },
+  {
+    domain: 'Other',
+    list: [
+      'Git',
+      'Figma',
+      'LAMP',
+      'LocalWP',
+    ],
+  },
+];
+
+const languages = [
+  {
+    name: 'Russian, Ukrainian',
+    certificates: [
+      {
+        level: 'Native',
+      },
+    ],
+  },
+  {
+    name: 'English',
+    certificates: [
+      {
+        level: 'C1',
+        url: 'https://api.busuu.com/anon/certificates/ed1d2e998374cca081aacf05d5b50673?lang=en',
+      },
+      {
+        level: 'B1',
+        url: '',
+      },
+    ],
+  },
+  {
+    name: 'Polish',
+    certificates: [
+      {
+        level: 'A2',
+        url: '',
+      },
+    ],
+  },
+  {
+    name: 'Romanian',
+    certificates: [
+      {
+        level: 'A2',
+        url: '',
+      },
+    ],
+  },
+];
 ---
 <LayoutMain title="CV">
-  <div class="bg-slate-300 py-[8mm] print:py-0 font-Kanit text-base-cv">
+  <div class="bg-slate-300 py-[8mm] print:py-0 font-Kanit text-base-cv font-light">
     <PageA4 class="relative">
       <Img 
         class="absolute top-[8mm] right-[8mm]" 
@@ -233,7 +316,7 @@ const educations = [
       </div>
 
       <h3 class="mt-4">Work Experience</h3>
-      <div class="font-light">
+      <div>
         {work[0].map(item => (
           <div class="grid grid-cols-cv-work mt-3">
             <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
@@ -274,7 +357,7 @@ const educations = [
     </PageA4>
 
     <PageA4>
-      <div class="font-light">
+      <div>
         {work[1].map(item => (
           <div class="grid grid-cols-cv-work mt-3">
             <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
@@ -314,7 +397,7 @@ const educations = [
       </div>
 
       <h3 class="mt-4">Projects</h3>
-      <div class="font-light">
+      <div>
         {projects[0].map(item => (
           <div class="grid grid-cols-cv-work mt-3">
             <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
@@ -351,7 +434,7 @@ const educations = [
 
     <PageA4>
       <h3 class="mt-4">Education</h3>
-      <div class="font-light">
+      <div>
         {educations.map(item => (
           <div class="grid grid-cols-cv-work mt-3">
             <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
@@ -380,7 +463,46 @@ const educations = [
       </div>
 
       <h3 class="mt-4">Skills</h3>
+      <div>
+        {skills.map(item => (
+          <div class="grid grid-cols-cv-work mt-3 items-center">
+            <div class="px-3 py-2">
+              {item.domain}
+            </div>
+
+            <div class="px-3 py-2">
+              {item.list.join(', ')}
+            </div>
+          </div>
+        ))}
+      </div>
+
       <h3 class="mt-4">Languages</h3>
+      <div>
+        {languages.map(item => (
+          <div class="grid grid-cols-cv-work mt-3 items-center">
+            <div class="px-3 py-2">
+              {item.name}
+            </div>
+
+            <ul class="px-3 py-2 list-none flex items-center gap-1">
+              {item.certificates.map(certificate => (
+                <li class="[&:not(:last-child)]:after:content-[',']">
+                  {certificate.url ? (
+                    <a href={certificate.url} target="_blank">
+                      {certificate.level}
+                    </a>
+                  ) : (
+                    <span>
+                      {certificate.level}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </PageA4>
   </div>
 </LayoutMain>
