@@ -23,7 +23,7 @@ export default {
       },
       gridTemplateColumns: {
         'cv-contacts': 'min-content 1fr',
-        'cv-work': 'minmax(0, 5cm) 1fr',
+        'cv-work': 'minmax(0, 6cm) 1fr',
       },
       colors: {
         'dimmed': '#eee',
