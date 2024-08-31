@@ -1,7 +1,508 @@
 ---
 import LayoutMain from '@layouts/LayoutMain.astro';
-import Link from '@components/Link.astro';
+import PageA4 from '@layouts/PageA4.astro';
+import Icon from '@components/Icon.astro';
+import Img from '@components/Img.astro';
+import { sanitizeUrl } from '@helpers';
+
+const contacts = [
+  {
+    url: 'mailto:arkadii.vodolazskyi@pm.me',
+    icon: 'proton', 
+    title: 'arkadii.vodolazskyi@pm.me', 
+  },
+  {
+    url: 'https://t.me/av_cat',
+    icon: 'telegram', 
+    title: 'av_cat', 
+  },
+  {
+    url: 'https://www.linkedin.com/in/avcat',
+    icon: 'linkedin', 
+    title: 'avcat', 
+  },
+  {
+    url: 'https://github.com/avcat',
+    icon: 'github', 
+    title: 'avcat', 
+  },
+];
+
+const work = [
+  [
+    {
+      date: 'Dec 2023',
+      company: {
+        title: 'Limestone Digital',
+        url: 'https://limestonedigital.com/',
+      },
+      position: 'PHP/Wordpress Developer', 
+      description: [
+        'Creating sites for American storage facilities with Codeigniter',
+        'Developing functionality and maintaining a product site on Wordpress + WPEngine',
+        'Maintaining 20+ environments on WPEngine',
+      ],
+    },
+    {
+      date: 'Mar 2023 — Dec 2023',
+      company: {
+        title: 'Redwerk',
+        url: 'https://redwerk.com/',
+      },
+      position: 'PHP/Wordpress Developer', 
+      description: [
+        'Wide maintenance of 8 corporate subdomains, implementing new functionality, pages, developing custom plugins',
+        'Implemented sorting of Case Studies and Testimonials based on client IP',
+        'Created a new content system, based on ACF Blocks',
+        'Improved legacy Content Builder',
+        'Close communication with PMs, DevOps, SEO specialists, designers, and other developers',
+      ],
+      sites: [
+        'https://redwerk.com/',
+        'https://qawerk.com/',
+        'https://bugcrawl.qawerk.com/',
+      ]
+    },
+    {
+      date: 'Sep 2021 — Feb 2023',
+      company: {
+        title: 'Zipy',
+        url: 'https://www.zipy.co.il/',
+      },
+      position: 'Wordpress Developer', 
+      description: [
+        'Created and maintained the whole front-end part of flormar.co.il',
+        'Site optimization and performance',
+        'Newsletter plugin and email development',
+        'Adding new features, fixing bugs',
+      ],
+      sites: [
+        'https://flormar.co.il/',
+        'https://www.wona.co.il/',
+      ]
+    },
+  ],
+  [
+    {
+      date: 'Nov 2020 — Aug 2021',
+      company: {
+        title: 'DevPro',
+        url: 'https://devpro.agency/',
+      },
+      position: 'Junior Wordpress Developer', 
+      description: [
+        'Full Wordpress site development from design to hosting',
+        'Adding functionality',
+        'Fixing bugs',
+      ],
+      sites: [
+        'https://beit-grand.odessa.ua/',
+        'https://bavaria.od.ua/',
+        'https://grili.com.ua/',
+        'https://med-spa.od.ua/',
+        'https://www.keentegro.com/',
+        'https://bellaesthetic.com.ua/',
+        'https://delicate.od.ua/',
+      ]
+    },
+  ]
+];
+
+const projects = [
+  [
+    {
+      date: 'Dec 2023',
+      project: {
+        title: 'Custom Blocks',
+        url: 'https://github.com/avcat/custom-blocks',
+        icon: 'github',
+      },
+      description: [
+        'Wordpress plugin that utilizes ACF Blocks',
+        'Component-based approach, easy to use and maintain, Git-friendly',
+      ],
+    },
+    {
+      date: 'Apr 2023',
+      project: {
+        title: 'Accessa Weather',
+        url: 'https://avcat.github.io/accesa-weather/',
+        icon: 'github',
+      },
+      description: [
+        'Weather widget.',
+        'Vue, Weather API, local storage, dynamic theme',
+      ],
+    },
+    {
+      date: 'Dec 2022',
+      project: {
+        title: 'Literary Note',
+        url: 'https://lynote.netlify.app/blog',
+        icon: 'literary-note',
+      },
+      description: [
+        'Literature blog (Ru)',
+        'SvelteKit v0.9, Sanity.io',
+        'Article navigation, footnotes, own design and parser',
+      ],
+    },
+    {
+      date: 'Nov 2022',
+      project: {
+        title: 'Ideals Weekends',
+        url: 'https://github.com/avcat/ideals-weeknds',
+        icon: 'github',
+      },
+      description: [
+        'Wordpress setup with Docker, Composer, Gulp',
+      ],
+    },
+    {
+      date: 'Aug 2022',
+      project: {
+        title: 'Reenbit Messenger',
+        url: 'https://avcat.github.io/reenbit-messenger/',
+        icon: 'github',
+      },
+      description: [
+        'Simple chat-like app, similar to Telegram',
+        'Built with React',
+      ],
+    },
+    {
+      date: 'Nov 2021',
+      project: {
+        title: 'Home Sweet Home',
+        url: 'https://hsh.kiev.ua',
+        icon: 'hsh',
+      },
+      description: [
+        'Skewers shop for an entrepreneur',
+        'Wordpress, Woocommerce, RankMath, WPRocket, Telegram, NovaPoshta',
+        'Own design',
+      ],
+    },
+  ]
+];
+
+const educations = [
+  {
+    date: 'Sep 2013 — Dec 2018',
+    university: {
+      title: 'Odessa National Polytechnic University',
+      url: 'https://op.edu.ua/en',
+    },
+    specialty: 'Automation and computer-integrated technologies, master, hons.',
+    certificates: {
+      title: 'Other certificates',
+      url: 'https://www.linkedin.com/in/avcat/details/certifications/',
+      icon: 'linkedin',
+    }
+  },
+];
+
+const skills = [
+  {
+    domain: 'Programming Languages',
+    list: [
+      'HTML',
+      'CSS',
+      'JS',
+      'PHP',
+      'SQL',
+    ],
+  },
+  {
+    domain: 'Ecosystems',
+    list: [
+      'WordPress',
+      'WPEngine',
+      'Node.js',
+    ],
+  },
+  {
+    domain: 'Frameworks',
+    list: [
+      'Vue',
+      'SvelteKit',
+      'React',
+      'Laravel',
+      'Symfony',
+      'Codeigniter',
+    ],
+  },
+  {
+    domain: 'Other',
+    list: [
+      'Git',
+      'Figma',
+      'LAMP',
+      'LocalWP',
+    ],
+  },
+];
+
+const languages = [
+  {
+    name: 'Russian, Ukrainian',
+    certificates: [
+      {
+        level: 'Native',
+      },
+    ],
+  },
+  {
+    name: 'English',
+    certificates: [
+      {
+        level: 'C1',
+        url: 'https://api.busuu.com/anon/certificates/ed1d2e998374cca081aacf05d5b50673?lang=en',
+      },
+      {
+        level: 'B1',
+        url: '',
+      },
+    ],
+  },
+  {
+    name: 'Polish',
+    certificates: [
+      {
+        level: 'A2',
+        url: '',
+      },
+    ],
+  },
+  {
+    name: 'Romanian',
+    certificates: [
+      {
+        level: 'A2',
+        url: '',
+      },
+    ],
+  },
+];
 ---
-<LayoutMain title="Home Page">
-  <Link class="px-2" href="/cv">CV</Link>
+<LayoutMain title="CV">
+  <div class="bg-slate-300 py-[8mm] print:py-0 font-Kanit text-base-cv font-light">
+    <PageA4 class="relative">
+      <Img 
+        class="absolute top-[8mm] right-[8mm] shadow-sm" 
+        imagePath="@images/cv/av.webp"
+        altText="Arkadii Vodolazskyi"
+        width={157}
+        height={202}
+      />
+
+      <h2 class="text-center">Arkadii Vodolazskyi</h2>
+      <h1 class="text-center">Wordpress Developer</h1>
+  
+      <h3 class="mt-4">Contacts</h3>
+      <div class="mt-1 grid grid-cols-cv-contacts">
+        {contacts.map(contact => (
+          <div class="py-1.5">
+            <a href={contact.url}>
+              <Icon name={contact.icon} width="24" height="24" />
+            </a>
+          </div>
+          <div class="py-1.5 pl-3">
+            <a href={contact.url}>
+              {contact.title}
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-4">Work Experience</h3>
+      <div>
+        {work[0].map(item => (
+          <div class="grid grid-cols-cv-work mt-3">
+            <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+              {item.date}
+            </time>
+      
+            <div class="px-3 py-2 bg-dimmed rounded-e-lg">
+              <h4>
+                <a href={item.company.url}>
+                  {item.company.title}
+                </a>
+              </h4>
+              <p>
+                {item.position}
+              </p>
+            </div>
+      
+            <div class="px-3 py-2">
+              {item.sites && item.sites.map(site => (
+                <a class="block" href={site}>
+                  {sanitizeUrl(site)}
+                </a>
+              ))}
+            </div>
+      
+            <div class="px-3 py-2 text-balance">
+              <ul>
+                {item.description && item.description.map(item => (
+                  <li>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </PageA4>
+
+    <PageA4>
+      <div>
+        {work[1].map(item => (
+          <div class="grid grid-cols-cv-work mt-3">
+            <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+              {item.date}
+            </time>
+      
+            <div class="px-3 py-2 bg-dimmed rounded-e-lg">
+              <h4>
+                <a href={item.company.url}>
+                  {item.company.title}
+                </a>
+              </h4>
+              <p>
+                {item.position}
+              </p>
+            </div>
+      
+            <div class="px-3 py-2">
+              {item.sites && item.sites.map(site => (
+                <a class="block" href={site}>
+                  {sanitizeUrl(site)}
+                </a>
+              ))}
+            </div>
+      
+            <div class="px-3 py-2 text-balance">
+              <ul>
+                {item.description && item.description.map(item => (
+                  <li>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-4">Projects</h3>
+      <div>
+        {projects[0].map(item => (
+          <div class="grid grid-cols-cv-work mt-3">
+            <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+              {item.date}
+            </time>
+      
+            <div class="px-3 py-2 bg-dimmed rounded-e-lg">
+              <h4>
+                <a href={item.project.url}>
+                  {item.project.title}
+                </a>
+              </h4>
+            </div>
+      
+            <div class="px-3 py-2 flex items-center justify-center">
+              <a href={item.project.url}>
+                <Icon name={item.project.icon} width="24" height="24" />
+              </a>
+            </div>
+      
+            <div class="px-3 py-2 text-balance">
+              <ul>
+                {item.description && item.description.map(item => (
+                  <li>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </PageA4>
+
+    <PageA4>
+      <h3 class="mt-4">Education</h3>
+      <div>
+        {educations.map(item => (
+          <div class="grid grid-cols-cv-work mt-3">
+            <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+              {item.date}
+            </time>
+      
+            <div class="px-3 py-2 bg-dimmed rounded-e-lg">
+              <h4>
+                <a href={item.university.url}>
+                  {item.university.title}
+                </a>
+              </h4>
+            </div>
+      
+            <div class="px-3 py-2 col-start-2">
+              <p>
+                {item.specialty}
+              </p>
+              <a class="mt-2 flex items-center gap-2" href={item.certificates.url}>
+                See other certificates on
+                <Icon name={item.certificates.icon} width="20" height="20" />
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-4">Skills</h3>
+      <div>
+        {skills.map(item => (
+          <div class="grid grid-cols-cv-work mt-3 items-center">
+            <div class="px-3 py-2">
+              {item.domain}
+            </div>
+
+            <div class="px-3 py-2">
+              {item.list.join(', ')}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h3 class="mt-4">Languages</h3>
+      <div>
+        {languages.map(item => (
+          <div class="grid grid-cols-cv-work mt-3 items-center">
+            <div class="px-3 py-2">
+              {item.name}
+            </div>
+
+            <ul class="px-3 py-2 list-none flex items-center gap-1">
+              {item.certificates.map(certificate => (
+                <li class="[&:not(:last-child)]:after:content-[',']">
+                  {certificate.url ? (
+                    <a href={certificate.url} target="_blank">
+                      {certificate.level}
+                    </a>
+                  ) : (
+                    <span>
+                      {certificate.level}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </PageA4>
+  </div>
 </LayoutMain>
