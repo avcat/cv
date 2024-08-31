@@ -257,20 +257,13 @@ const languages = [
     certificates: [
       {
         level: 'C1',
+        year: 2024,
         url: 'https://api.busuu.com/anon/certificates/ed1d2e998374cca081aacf05d5b50673?lang=en',
       },
       {
         level: 'B1',
-        url: '',
-      },
-    ],
-  },
-  {
-    name: 'Polish',
-    certificates: [
-      {
-        level: 'A2',
-        url: '',
+        year: 2013,
+        url: 'https://drive.proton.me/urls/VYP2ZJ55FC#HMR70KOMzXet',
       },
     ],
   },
@@ -279,7 +272,18 @@ const languages = [
     certificates: [
       {
         level: 'A2',
-        url: '',
+        year: 2024,
+        url: 'https://drive.proton.me/urls/8HFWSDT5J0#ygYuk30FYQnV',
+      },
+    ],
+  },
+  {
+    name: 'Polish',
+    certificates: [
+      {
+        level: 'A2',
+        year: 2017,
+        url: 'https://drive.proton.me/urls/Y41YKQ68Y8#HclW3HFxCWBA',
       },
     ],
   },
@@ -303,12 +307,12 @@ const languages = [
       <div class="mt-1 grid grid-cols-cv-contacts">
         {contacts.map(contact => (
           <div class="py-1.5">
-            <a href={contact.url}>
+            <a href={contact.url} target="_blank">
               <Icon name={contact.icon} width="24" height="24" />
             </a>
           </div>
           <div class="py-1.5 pl-3">
-            <a href={contact.url}>
+            <a href={contact.url} target="_blank">
               {contact.title}
             </a>
           </div>
@@ -325,7 +329,7 @@ const languages = [
       
             <div class="px-3 py-2 bg-dimmed rounded-e-lg">
               <h4>
-                <a href={item.company.url}>
+                <a href={item.company.url} target="_blank">
                   {item.company.title}
                 </a>
               </h4>
@@ -336,7 +340,7 @@ const languages = [
       
             <div class="px-3 py-2">
               {item.sites && item.sites.map(site => (
-                <a class="block" href={site}>
+                <a class="block" href={site} target="_blank">
                   {sanitizeUrl(site)}
                 </a>
               ))}
@@ -366,7 +370,7 @@ const languages = [
       
             <div class="px-3 py-2 bg-dimmed rounded-e-lg">
               <h4>
-                <a href={item.company.url}>
+                <a href={item.company.url} target="_blank">
                   {item.company.title}
                 </a>
               </h4>
@@ -377,7 +381,7 @@ const languages = [
       
             <div class="px-3 py-2">
               {item.sites && item.sites.map(site => (
-                <a class="block" href={site}>
+                <a class="block" href={site} target="_blank">
                   {sanitizeUrl(site)}
                 </a>
               ))}
@@ -406,14 +410,14 @@ const languages = [
       
             <div class="px-3 py-2 bg-dimmed rounded-e-lg">
               <h4>
-                <a href={item.project.url}>
+                <a href={item.project.url} target="_blank">
                   {item.project.title}
                 </a>
               </h4>
             </div>
       
             <div class="px-3 py-2 flex items-center justify-center">
-              <a href={item.project.url}>
+              <a href={item.project.url} target="_blank">
                 <Icon name={item.project.icon} width="24" height="24" />
               </a>
             </div>
@@ -443,7 +447,7 @@ const languages = [
       
             <div class="px-3 py-2 bg-dimmed rounded-e-lg">
               <h4>
-                <a href={item.university.url}>
+                <a href={item.university.url} target="_blank">
                   {item.university.title}
                 </a>
               </h4>
@@ -453,7 +457,7 @@ const languages = [
               <p>
                 {item.specialty}
               </p>
-              <a class="mt-2 flex items-center gap-2" href={item.certificates.url}>
+              <a class="mt-2 flex items-center gap-2" href={item.certificates.url} target="_blank">
                 See other certificates on
                 <Icon name={item.certificates.icon} width="20" height="20" />
               </a>
@@ -497,6 +501,8 @@ const languages = [
                       {certificate.level}
                     </span>
                   )}
+                  
+                  {certificate.year && `(${certificate.year})`}
                 </li>
               ))}
             </ul>
