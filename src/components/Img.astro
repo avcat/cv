@@ -8,10 +8,23 @@ interface Props {
    width?: number;
    height?: number;
    class?: string;
+   decoding?: 'async' | 'auto' | 'sync';
+   loading?: 'lazy' | 'eager';
 }
 
-let { imagePath, altText, width, height, class: className } = Astro.props;
+let { 
+   imagePath, 
+   altText, 
+   width, 
+   height, 
+   class: className, 
+   decoding,
+   loading,
+} = Astro.props;
+
 imagePath = imagePath.replace('@images', '/src/images');
+decoding = decoding || 'async';
+loading = loading || 'lazy';
 
 const images = import.meta.glob<{ default: ImageMetadata }>('@images/**/*');
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob"`);
@@ -23,4 +36,6 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob"`
    alt={altText}
    width={width} 
    height={height}
+   decoding={decoding}
+   loading={loading}
 />
