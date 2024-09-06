@@ -36,10 +36,10 @@ const work = [
         title: 'Limestone Digital',
         url: 'https://limestonedigital.com/',
       },
-      position: 'PHP/Wordpress Developer', 
+      position: 'PHP/WordPress Developer', 
       description: [
         'Creating sites for American storage facilities with Codeigniter',
-        'Developing functionality and maintaining a product site on Wordpress + WPEngine',
+        'Developing functionality and maintaining a product site on WordPress + WPEngine',
         'Maintaining 20+ environments on WPEngine',
       ],
     },
@@ -49,7 +49,7 @@ const work = [
         title: 'Redwerk',
         url: 'https://redwerk.com/',
       },
-      position: 'PHP/Wordpress Developer', 
+      position: 'PHP/WordPress Developer', 
       description: [
         'Wide maintenance of 8 corporate subdomains, implementing new functionality, pages, developing custom plugins',
         'Implemented sorting of Case Studies and Testimonials based on client IP',
@@ -69,7 +69,7 @@ const work = [
         title: 'Zipy',
         url: 'https://www.zipy.co.il/',
       },
-      position: 'Wordpress Developer', 
+      position: 'WordPress Developer', 
       description: [
         'Created and maintained the whole front-end part of flormar.co.il',
         'Site optimization and performance',
@@ -89,9 +89,9 @@ const work = [
         title: 'DevPro',
         url: 'https://devpro.agency/',
       },
-      position: 'Junior Wordpress Developer', 
+      position: 'Junior WordPress Developer', 
       description: [
-        'Full Wordpress site development from design to hosting',
+        'Full WordPress site development from design to hosting',
         'Adding functionality',
         'Fixing bugs',
       ],
@@ -117,8 +117,14 @@ const projects = [
         url: 'https://github.com/avcat/custom-blocks',
         icon: 'github',
       },
+      technologies: [
+        'WordPress',
+        'ACF',
+        'ACF Blocks',
+        'Git',
+      ],
       description: [
-        'Wordpress plugin that utilizes ACF Blocks',
+        'WordPress plugin, that utilizes ACF Blocks',
         'Component-based approach, easy to use and maintain, Git-friendly',
       ],
     },
@@ -129,9 +135,13 @@ const projects = [
         url: 'https://avcat.github.io/accesa-weather/',
         icon: 'github',
       },
+      technologies: [
+        'Vue',
+        'Weather API',
+        'Local Storage',
+      ],
       description: [
         'Weather widget.',
-        'Vue, Weather API, local storage, dynamic theme',
       ],
     },
     {
@@ -141,9 +151,12 @@ const projects = [
         url: 'https://lynote.netlify.app/blog',
         icon: 'literary-note',
       },
+      technologies: [
+        'SvelteKit',
+        'Sanity.io',
+      ],
       description: [
         'Literature blog (Ru)',
-        'SvelteKit v0.9, Sanity.io',
         'Article navigation, footnotes, own design and parser',
       ],
     },
@@ -154,8 +167,14 @@ const projects = [
         url: 'https://github.com/avcat/ideals-weeknds',
         icon: 'github',
       },
+      technologies: [
+        'WordPress',
+        'Docker',
+        'Composer',
+        'Gulp',
+      ],
       description: [
-        'Wordpress setup with Docker, Composer, Gulp',
+        'WordPress setup',
       ],
     },
     {
@@ -165,9 +184,12 @@ const projects = [
         url: 'https://avcat.github.io/reenbit-messenger/',
         icon: 'github',
       },
+      technologies: [
+        'React',
+        'Chuck Norris Jokes API',
+      ],
       description: [
         'Simple chat-like app, similar to Telegram',
-        'Built with React',
       ],
     },
     {
@@ -177,9 +199,16 @@ const projects = [
         url: 'https://hsh.kiev.ua',
         icon: 'hsh',
       },
+      technologies: [
+        'WordPress',
+        'Woocommerce',
+        'RankMath',
+        'WPRocket',
+        'Telegram',
+        'NovaPoshta',
+      ],
       description: [
         'Skewers shop for an entrepreneur',
-        'Wordpress, Woocommerce, RankMath, WPRocket, Telegram, NovaPoshta',
         'Own design',
       ],
     },
@@ -302,7 +331,7 @@ const languages = [
       />
 
       <h2 class="text-center">Arkadii Vodolazskyi</h2>
-      <h1 class="text-center">Wordpress Developer</h1>
+      <h1 class="text-center">WordPress Developer</h1>
   
       <h3 class="mt-4">Contacts</h3>
       <div class="mt-1 grid grid-cols-cv-contacts">
@@ -405,25 +434,33 @@ const languages = [
       <div>
         {projects[0].map(item => (
           <div class="grid grid-cols-cv-work mt-3">
-            <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+            <time class="px-3 py-3 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
               {item.date}
             </time>
       
-            <div class="px-3 py-2 bg-dimmed rounded-e-lg">
-              <h4>
+            <div class="px-3 py-3 bg-dimmed rounded-e-lg flex items-center gap-2 justify-between">
+              <h4 class="shrink-0">
                 <a href={item.project.url} target="_blank">
                   {item.project.title}
                 </a>
               </h4>
+
+              <ul class="list-pills light justify-end">
+                {item.technologies && item.technologies.map(technology => (
+                  <li>
+                    {technology}
+                  </li>
+                ))}
+              </ul>
             </div>
       
-            <div class="px-3 py-2 flex items-center justify-center">
+            <div class="px-3 py-3 flex items-center justify-center">
               <a href={item.project.url} target="_blank">
-                <Icon name={item.project.icon} width="24" height="24" />
+                <Icon name={item.project.icon} width="27" height="27" />
               </a>
             </div>
       
-            <div class="px-3 py-2 text-balance">
+            <div class="px-3 py-3 text-balance">
               <ul>
                 {item.description && item.description.map(item => (
                   <li>
@@ -438,7 +475,7 @@ const languages = [
     </PageA4>
 
     <PageA4>
-      <h3 class="mt-4">Education</h3>
+      <h3>Education</h3>
       <div>
         {educations.map(item => (
           <div class="grid grid-cols-cv-work mt-3">
@@ -475,7 +512,7 @@ const languages = [
               {item.domain}
             </div>
 
-            <ul class="list-pills">
+            <ul class="list-pills px-3 py-2">
               {item.list.map(skill => (
                 <li>
                   {skill}
@@ -494,7 +531,7 @@ const languages = [
               {item.name}
             </div>
 
-            <ul class="list-pills">
+            <ul class="list-pills px-3 py-2">
               {item.certificates.map(certificate => (
                 <li>
                   {certificate.url ? (

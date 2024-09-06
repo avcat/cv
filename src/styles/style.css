@@ -34,10 +34,14 @@
   }
 
   .list-pills {
-    @apply px-3 py-2 list-none flex flex-wrap items-center gap-1.5;
+    @apply list-none flex flex-wrap items-center gap-1.5;
 
     li {
       @apply px-1.5 bg-dimmed-o rounded-lg shadow;
+
+      .light & {
+        @apply bg-dimmed-l;
+      }
     }
   }
 }
