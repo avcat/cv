@@ -475,9 +475,13 @@ const languages = [
               {item.domain}
             </div>
 
-            <div class="px-3 py-2">
-              {item.list.join(', ')}
-            </div>
+            <ul class="list-pills">
+              {item.list.map(skill => (
+                <li>
+                  {skill}
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
@@ -490,9 +494,9 @@ const languages = [
               {item.name}
             </div>
 
-            <ul class="px-3 py-2 list-none flex items-center gap-1">
+            <ul class="list-pills">
               {item.certificates.map(certificate => (
-                <li class="[&:not(:last-child)]:after:content-[',']">
+                <li>
                   {certificate.url ? (
                     <a href={certificate.url} target="_blank">
                       {certificate.level}

@@ -27,6 +27,7 @@ export default {
       },
       colors: {
         'dimmed': '#eee',
+        'dimmed-o': '#eeeeee60',
       },
     },
   },
