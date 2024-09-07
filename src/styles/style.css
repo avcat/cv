@@ -52,6 +52,11 @@
   .btn-print {
     @apply fixed z-50 bottom-3 left-[50%] translate-x-[-50%] tr bg-blue-600 hover:bg-blue-800 text-xl text-slate-100 py-2.5 px-3 uppercase font-Prompt tracking-wider font-semibold shadow-gray-600 shadow-lg rounded-xl flex gap-2 items-center;
   }
+
+  .bg-grad-1 {
+    background-color: #0a3c6f;
+    background-image: linear-gradient(to bottom, #0a3c6f, #132157);
+  }
 }
 
 @page {
