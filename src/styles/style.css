@@ -53,10 +53,6 @@
 }
 
 @media print {
-  astro-dev-toolbar {
-    display: none;
-  }
-
   /* 
     Make sure the browser respects background colors while printing. 
     https://developer.mozilla.org/en-US/docs/Web/CSS/print-color-adjust
