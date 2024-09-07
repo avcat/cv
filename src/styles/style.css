@@ -25,24 +25,32 @@
 }
 
 @layer utilities {
+  .tr {
+    @apply transition duration-300 ease-out
+  }
+
   .tr-link {
-    @apply text-blue-600 transition duration-300 ease-out hover:text-blue-800;
+    @apply text-blue-600 tr hover:text-blue-800;
   }
 
   .tr-svg {
-    @apply transition duration-300 ease-out hover:scale-110;
+    @apply tr hover:scale-110;
   }
 
   .list-pills {
     @apply list-none flex flex-wrap items-center gap-1.5;
 
     li {
-      @apply px-1.5 bg-dimmed-o rounded-lg shadow;
+      @apply px-1.5 bg-dimmed rounded-lg shadow;
 
       .light & {
         @apply bg-dimmed-l;
       }
     }
+  }
+
+  .btn-print {
+    @apply fixed z-50 bottom-3 left-[50%] translate-x-[-50%] tr bg-blue-600 hover:bg-blue-800 text-xl text-slate-100 py-2.5 px-3 uppercase font-Prompt tracking-wider font-semibold shadow-gray-600 shadow-lg rounded-xl flex gap-2 items-center;
   }
 }
 
@@ -59,5 +67,9 @@
   */
   .bg-dimmed {
     print-color-adjust: exact;
+  }
+
+  .btn-print {
+    display: none;
   }
 }
