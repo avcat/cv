@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1em;
+  }
+
   body {
     &::-webkit-scrollbar {
       width: 8px;
@@ -78,6 +83,43 @@
     background-color: #0a3c6f;
     background-image: linear-gradient(to bottom, #0a3c6f, #132157);
   }
+
+  .navigation {
+    @apply fixed left-0 top-[50%] translate-x-4 translate-y-[-50%] uppercase grid gap-2 bg-white rounded-xl px-3 py-2 overflow-hidden shadow-slate-800;
+
+    a {
+      @apply font-bold;
+
+      &:focus {
+        @apply text-blue-400;
+      }
+    }
+  }
+
+  h3[id] {
+    + div {
+      @apply rounded-lg outline outline-4 outline-offset-4 outline-transparent;
+    }
+
+    &:target + div {
+      animation: highlight 1.5s 0.1s ease-out forwards;
+    }
+  }
+}
+
+@keyframes highlight {
+  0% {
+    @apply outline-transparent;
+  }
+  20% {
+    @apply outline-blue-400;
+  }
+  80% {
+    @apply outline-blue-400;
+  }
+  100% {
+    @apply outline-transparent;
+  }
 }
 
 @page {
@@ -95,6 +137,7 @@
     print-color-adjust: exact;
   }
 
+  .navigation,
   .btn-print {
     display: none;
   }

@@ -329,6 +329,15 @@ const languages = [
 ];
 ---
 <LayoutMain title="CV | Arkadii Vodolazskyi">
+  <div class="navigation">
+    <a href="#contacts">Contacts</a>
+    <a href="#experience">Work Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#languages">Languages</a>
+  </div>
+
   <div class="py-[8mm] print:py-0 font-Kanit text-base-cv font-light">
     <PageA4 class="relative">
       <Img 
@@ -343,8 +352,8 @@ const languages = [
       <h2 class="text-center">Arkadii Vodolazskyi</h2>
       <h1 class="text-center">WordPress Developer</h1>
   
-      <h3 class="mt-4">Contacts</h3>
-      <div class="mt-1 grid grid-cols-cv-contacts">
+      <h3 id="contacts" class="mt-4">Contacts</h3>
+      <div class="mt-1 grid grid-cols-cv-contacts max-w-content">
         {contacts.map(contact => (
           <div class="py-1.5">
             <a href={contact.url} target="_blank">
@@ -359,7 +368,7 @@ const languages = [
         ))}
       </div>
 
-      <h3 class="mt-4">Work Experience</h3>
+      <h3 id="experience" class="mt-4">Work Experience</h3>
       <div>
         {work[0].map(item => (
           <div class="grid grid-cols-cv-work mt-3">
@@ -440,7 +449,7 @@ const languages = [
         ))}
       </div>
 
-      <h3 class="mt-4">Projects</h3>
+      <h3 id="projects" class="mt-4">Projects</h3>
       <div>
         {projects[0].map(item => (
           <div class="grid grid-cols-cv-work mt-3">
@@ -485,7 +494,7 @@ const languages = [
     </PageA4>
 
     <PageA4>
-      <h3>Education</h3>
+      <h3 id="education">Education</h3>
       <div>
         {educations.map(item => (
           <div class="grid grid-cols-cv-work mt-3">
@@ -514,7 +523,7 @@ const languages = [
         ))}
       </div>
 
-      <h3 class="mt-4">Skills</h3>
+      <h3 id="skills" class="mt-4">Skills</h3>
       <div>
         {skills.map(item => (
           <div class="grid grid-cols-cv-work mt-3 items-center">
@@ -533,7 +542,7 @@ const languages = [
         ))}
       </div>
 
-      <h3 class="mt-4">Languages</h3>
+      <h3 id="languages" class="mt-4">Languages</h3>
       <div>
         {languages.map(item => (
           <div class="grid grid-cols-cv-work mt-3 items-center">

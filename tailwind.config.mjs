@@ -9,6 +9,9 @@ export default {
       width: {
         a4: '210mm',
       },
+      maxWidth: {
+        "content": "max-content"
+      },
       height: {
         a4: '297mm',
       },
