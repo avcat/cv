@@ -3,6 +3,27 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background: linear-gradient(to bottom, #0a3c6f, #132157);
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #aaa;
+    }
+  }
+
   h1 {
     @apply font-Prompt text-lg-cv font-semibold;
   }
@@ -50,7 +71,7 @@
   }
 
   .btn-print {
-    @apply fixed z-50 bottom-3 left-[50%] translate-x-[-50%] tr bg-blue-600 hover:bg-blue-800 text-xl text-slate-100 py-2.5 px-3 uppercase font-Prompt tracking-wider font-semibold shadow-gray-600 shadow-lg rounded-xl flex gap-2 items-center;
+    @apply fixed z-50 bottom-3 left-[50%] translate-x-[-50%] tr bg-blue-600 hover:bg-blue-800 text-xl text-slate-100 py-2.5 px-3 uppercase font-Prompt tracking-wider font-semibold shadow-slate-800 shadow-lg rounded-xl flex gap-2 items-center;
   }
 
   .bg-grad-1 {
