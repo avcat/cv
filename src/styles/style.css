@@ -85,13 +85,13 @@
   }
 
   .navigation {
-    @apply fixed left-0 top-[50%] translate-x-4 translate-y-[-50%] uppercase grid gap-2 bg-white rounded-xl px-3 py-2 overflow-hidden shadow-slate-800;
+    @apply fixed left-0 top-0 translate-x-2 translate-y-4 uppercase grid gap-2 justify-items-start;
 
     a {
-      @apply font-bold;
+      @apply font-semibold px-1.5 text-white rounded;
 
-      &:focus {
-        @apply text-blue-400;
+      &.active {
+        animation: highlightAnchor 1.5s 0.1s ease-out forwards;
       }
     }
   }
@@ -119,6 +119,21 @@
   }
   100% {
     @apply outline-transparent;
+  }
+}
+
+@keyframes highlightAnchor {
+  0% {
+    @apply bg-transparent;
+  }
+  20% {
+    @apply bg-blue-400;
+  }
+  80% {
+    @apply bg-blue-400;
+  }
+  100% {
+    @apply bg-transparent;
   }
 }
 

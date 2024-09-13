@@ -25,7 +25,6 @@ export default {
         'lg-cv': '14pt',
       },
       gridTemplateColumns: {
-        'cv-contacts': 'min-content 1fr',
         'cv-work': 'minmax(0, 5.5cm) 1fr',
       },
       colors: {
