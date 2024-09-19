@@ -5,7 +5,7 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
-      "@helpers": ["src/helpers/helpers.js"],
+      "@helpers/*": ["src/helpers/*"],
       "@icons/*": ["src/icons/*"],
       "@images/*": ["src/images/*"],
       "@layouts/*": ["src/layouts/*"],

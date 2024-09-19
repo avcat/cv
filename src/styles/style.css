@@ -148,7 +148,7 @@
     Make sure the browser respects background colors while printing. 
     https://developer.mozilla.org/en-US/docs/Web/CSS/print-color-adjust
   */
-  .bg-dimmed {
+  body {
     print-color-adjust: exact;
   }
 

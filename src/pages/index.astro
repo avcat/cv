@@ -3,7 +3,22 @@ import LayoutMain from '@layouts/LayoutMain.astro';
 import PageA4 from '@layouts/PageA4.astro';
 import Icon from '@components/Icon.astro';
 import Img from '@components/Img.astro';
-import { sanitizeUrl } from '@helpers';
+import { sanitizeUrl, slugifyTitle } from '@helpers/helpers.js';
+
+const nav = [
+  'Contacts',
+  'Work Experience',
+  'Projects',
+  'Education',
+  'Skills',
+  'Languages',
+];
+
+const introduction = {
+  image: '@images/cv/av.webp',
+  name: 'Arkadii Vodolazskyi',
+  position: 'WordPress Developer',
+};
 
 const contacts = [
   {
@@ -287,7 +302,7 @@ const languages = [
       {
         level: 'C1',
         year: 2024,
-        url: 'https://api.busuu.com/anon/certificates/ed1d2e998374cca081aacf05d5b50673?lang=en',
+        url: 'https://api.busuu.com/anon/certificates/89305c1cd03164955fdc424af10feed6?lang=en',
       },
       {
         level: 'B1',
@@ -338,34 +353,47 @@ const languages = [
 
     highlightNav.addEventListener('click', e => {
       anchors.forEach(anchor => anchor.classList.remove('active'));
-      e.target.classList.add('active');
+
+      if (e.target instanceof HTMLElement) {
+        e.target.classList.add('active');
+      }
     });
   }, true);
 </script>
 
 <LayoutMain title="CV | Arkadii Vodolazskyi">
-  <div class="navigation" data-js="highlightNav">
-    <a href="#contacts">Contacts</a>
-    <a href="#experience">Work Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#languages">Languages</a>
-  </div>
 
+  {nav && nav.length && (
+    <div class="navigation" data-js="highlightNav">
+      {nav.map(item => (
+        <a href={`#${slugifyTitle(item)}`}>
+          {item}
+        </a>
+      ))}
+    </div>
+  )}
+  
   <div class="py-[8mm] print:py-0 font-Kanit text-base-cv font-light">
     <PageA4 class="relative">
-      <Img 
-        class="absolute top-[8mm] right-[8mm] shadow-sm" 
-        imagePath="@images/cv/av.webp"
-        altText="Arkadii Vodolazskyi"
-        width={157}
-        height={202}
-        loading='eager'
-      />
 
-      <h2 class="text-center">Arkadii Vodolazskyi</h2>
-      <h1 class="text-center">WordPress Developer</h1>
+      {introduction && <div>
+        <Img
+          class="absolute top-[8mm] right-[8mm] shadow-sm"
+          imagePath={introduction.image}
+          altText="Arkadii Vodolazskyi"
+          width={157}
+          height={202}
+          loading='eager'
+        />
+
+        <h2 class="text-center">
+          {introduction.name}
+        </h2>
+
+        <h1 class="text-center">
+          {introduction.position}
+        </h1>
+      </div>}
   
       <h3 id="contacts" class="mt-4">Contacts</h3>
       <div class="mt-3 grid max-w-content gap-3">
@@ -377,7 +405,7 @@ const languages = [
         ))}
       </div>
 
-      <h3 id="experience" class="mt-4">Work Experience</h3>
+      <h3 id="work-experience" class="mt-4">Work Experience</h3>
       <div>
         {work[0].map(item => (
           <div class="grid grid-cols-cv-work mt-3">
