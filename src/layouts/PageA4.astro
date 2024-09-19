@@ -1,11 +1,26 @@
 ---
-interface Props {
-  class?: string;
+import Introduction from '@components/Introduction.astro';
+import Contacts from '@components/Contacts.astro';
+
+interface Section {
+  type: string;
+  data: Object | Array<any>;
+  title?: string;
 }
 
-const { class: className } = Astro.props;
+interface Props {
+  class?: string;
+  sections: Array<Section>;
+}
+
+const { class: className, sections } = Astro.props;
 ---
 
 <div class={`${className} mx-auto my-[8mm] first:mt-0 h-a4 w-a4 bg-white p-[8mm] shadow-lg`}>
-  <slot />
+  {sections.map(section => {
+    switch(section.type) {
+      case 'introduction': return <Introduction data={section.data} />;
+      case 'contacts': return <Contacts data={section.data} title={section.title} />;
+    }
+  })}
 </div>
