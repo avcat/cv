@@ -1,6 +1,6 @@
 ---
 import Icon from '@components/Icon.astro';
-import { slugifyTitle } from '@helpers/helpers.js';
+import SectionTitle from '@components/SectionTitle.astro';
 
 interface Props {
   data: any;
@@ -9,11 +9,7 @@ interface Props {
 
 const { data, title } = Astro.props;
 ---
-{title && (
-  <h3 id={slugifyTitle(title)} class="mt-4">
-    {title}
-  </h3>
-)}
+<SectionTitle {title} />
 
 <div class="mt-3 grid max-w-content gap-3">
   {data.map(contact => (

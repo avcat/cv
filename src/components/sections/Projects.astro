@@ -1,0 +1,54 @@
+---
+import Icon from '@components/Icon.astro';
+import SectionTitle from '@components/SectionTitle.astro';
+
+interface Props {
+  data: any;
+  title?: string;
+}
+
+const { data, title } = Astro.props;
+---
+<SectionTitle {title} />
+
+<div>
+  {data.map(item => (
+    <div class="grid grid-cols-cv-work mt-3">
+      <time class="px-3 py-3 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
+        {item.date}
+      </time>
+
+      <div class="px-3 py-3 bg-dimmed rounded-e-lg flex items-center gap-2 justify-between">
+        <h4 class="shrink-0">
+          <a href={item.project.url} target="_blank">
+            {item.project.title}
+          </a>
+        </h4>
+
+        <ul class="list-pills light justify-end">
+          {item.technologies && item.technologies.map(technology => (
+            <li>
+              {technology}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="px-3 py-3 flex items-center justify-center">
+        <a href={item.project.url} target="_blank">
+          <Icon name={item.project.icon} width="27" height="27" />
+        </a>
+      </div>
+
+      <div class="px-3 py-3 text-balance">
+        <ul>
+          {item.description && item.description.map(item => (
+            <li>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  ))}
+</div>

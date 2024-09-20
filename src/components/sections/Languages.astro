@@ -1,0 +1,39 @@
+---
+import SectionTitle from '@components/SectionTitle.astro';
+
+interface Props {
+  data: any;
+  title?: string;
+}
+
+const { data, title } = Astro.props;
+---
+<SectionTitle {title} />
+
+<div>
+  {data.map(item => (
+    <div class="grid grid-cols-cv-work mt-3 items-center">
+      <div class="px-3 py-2">
+        {item.name}
+      </div>
+
+      <ul class="list-pills px-3 py-2">
+        {item.certificates.map(certificate => (
+          <li>
+            {certificate.url ? (
+              <a href={certificate.url} target="_blank">
+                {certificate.level}
+              </a>
+            ) : (
+              <span>
+                {certificate.level}
+              </span>
+            )}
+            
+            {certificate.year && `(${certificate.year})`}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>

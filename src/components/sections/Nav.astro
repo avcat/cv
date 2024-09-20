@@ -1,0 +1,21 @@
+---
+import { slugifyTitle } from '@helpers/helpers.js';
+
+const nav = [
+  'Contacts',
+  'Work Experience',
+  'Projects',
+  'Education',
+  'Skills',
+  'Languages',
+];
+---
+{nav && nav.length && (
+  <div class="navigation" data-js="highlightNav">
+    {nav.map(item => (
+      <a href={`#${slugifyTitle(item)}`}>
+        {item}
+      </a>
+    ))}
+  </div>
+)}

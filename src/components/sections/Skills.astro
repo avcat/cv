@@ -1,0 +1,29 @@
+---
+import SectionTitle from '@components/SectionTitle.astro';
+
+interface Props {
+  data: any;
+  title?: string;
+}
+
+const { data, title } = Astro.props;
+---
+<SectionTitle {title} />
+
+<div>
+  {data.map(item => (
+    <div class="grid grid-cols-cv-work mt-3 items-center">
+      <div class="px-3 py-2">
+        {item.domain}
+      </div>
+
+      <ul class="list-pills px-3 py-2">
+        {item.list.map(skill => (
+          <li>
+            {skill}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</div>
