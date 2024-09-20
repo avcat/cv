@@ -18,20 +18,23 @@ interface Props {
   sections: Array<Section>;
 }
 
+const componentsMap = {
+  Introduction,
+  Contacts,
+  Work,
+  Projects,
+  Education,
+  Skills,
+  Languages,
+};
+
 const { class: className, sections } = Astro.props;
 ---
-
-<div class={`${className} mx-auto my-[8mm] first:mt-0 h-a4 w-a4 bg-white p-[8mm] shadow-lg relative`}>
-  {sections.map(section => {
-    switch(section.type) {
-      case 'introduction': return <Introduction data={section.data} />;
-      case 'contacts': return <Contacts data={section.data} title={section.title} />;
-      case 'work': return <Work data={section.data} title={section.title} />;
-      case 'projects': return <Projects data={section.data} title={section.title} />;
-      case 'education': return <Education data={section.data} title={section.title} />;
-      case 'skills': return <Skills data={section.data} title={section.title} />;
-      case 'languages': return <Languages data={section.data} title={section.title} />;
-      default: return;
-    }
-  })}
-</div>
+{sections && sections.length && (
+  <div class={`${className} mx-auto my-[8mm] first:mt-0 h-a4 w-a4 bg-white p-[8mm] shadow-lg relative`}>
+    {sections.map(section => {
+      const Section = componentsMap[section.type];
+      return <Section data={section.data} title={section.title} />;
+    })}
+  </div>
+)}

@@ -3,7 +3,7 @@ export const pages = [
   [
     // introduction
     {
-      type: 'introduction',
+      type: 'Introduction',
       data: {
         image: '@images/cv/av.webp',
         name: 'Arkadii Vodolazskyi',
@@ -13,7 +13,7 @@ export const pages = [
     
     // contacts
     {
-      type: 'contacts',
+      type: 'Contacts',
       title: 'Contacts',
       data: [
         {
@@ -41,7 +41,7 @@ export const pages = [
     
     // work
     {
-      type: 'work',
+      type: 'Work',
       title: 'Work Experience',
       data: [
         {
@@ -103,7 +103,7 @@ export const pages = [
   [
     // work
     {
-      type: 'work',
+      type: 'Work',
       data: [
         {
           date: 'Nov 2020 — Aug 2021',
@@ -132,7 +132,7 @@ export const pages = [
 
     // projects
     {
-      type: 'projects',
+      type: 'Projects',
       title: 'Projects',
       data: [
         {
@@ -245,7 +245,7 @@ export const pages = [
   [
     // education
     {
-      type: 'education',
+      type: 'Education',
       title: 'Education',
       data: [
         {
@@ -266,7 +266,7 @@ export const pages = [
 
     // skills
     {
-      type: 'skills',
+      type: 'Skills',
       title: 'Skills',
       data: [
         {
@@ -312,7 +312,7 @@ export const pages = [
 
     // languages
     {
-      type: 'languages',
+      type: 'Languages',
       title: 'Languages',
       data: [
         {
