@@ -52,6 +52,9 @@ export const pages = [
           },
           position: 'PHP/WordPress Developer', 
           description: [
+            'Rebuilt project module bundler from scratch: Gulp, sharp, PostCSS, terser.',
+            'Rebuilt Admin panel, that is used for content management.',
+            'Added helper functions for common tasks: data structuring, formatting, working with embeds.',
             'Creating sites for American storage facilities with Codeigniter',
             'Developing functionality and maintaining a product site on WordPress + WPEngine',
             'Maintaining 20+ environments on WPEngine',
@@ -166,7 +169,7 @@ export const pages = [
             'Local Storage',
           ],
           description: [
-            'Weather widget.',
+            'Weather widget',
           ],
         },
         {
@@ -181,7 +184,7 @@ export const pages = [
             'Sanity.io',
           ],
           description: [
-            'Literature blog (Ru)',
+            'Literature blog',
             'Article navigation, footnotes, own design and parser',
           ],
         },
@@ -233,8 +236,7 @@ export const pages = [
             'NovaPoshta',
           ],
           description: [
-            'Skewers shop for an entrepreneur',
-            'Own design',
+            'Skewers shop with original design',
           ],
         },
       ],

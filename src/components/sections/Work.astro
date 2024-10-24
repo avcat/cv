@@ -37,9 +37,9 @@ const { data, title } = Astro.props;
         ))}
       </div>
 
-      <div class="px-3 py-2 text-balance">
+      <div class="px-3 py-2">
         <ul>
-          {item.description && item.description.map(item => (
+          {item.description && item.description.filter(Boolean).map(item => (
             <li>
               {item}
             </li>
