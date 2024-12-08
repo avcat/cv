@@ -5,7 +5,6 @@ export const pages = [
     {
       type: 'Introduction',
       data: {
-        image: '@images/cv/av.webp',
         name: 'Arkadii Vodolazskyi',
         position: 'WordPress Developer',
       }
