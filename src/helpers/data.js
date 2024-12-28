@@ -30,11 +30,6 @@ export const pages = [
           icon: 'github', 
           title: 'GitHub', 
         },
-        {
-          url: 'https://dub.sh/i9CebbJ',
-          icon: 'telegram', 
-          title: 'Telegram', 
-        },
       ]
     },
     
@@ -43,6 +38,23 @@ export const pages = [
       type: 'Work',
       title: 'Work Experience',
       data: [
+        {
+          date: 'Dec 2024',
+          company: {
+            title: 'Boostylabs',
+            url: 'https://boostylabs.com/',
+          },
+          position: 'WordPress Developer', 
+          description: [
+            'Created project environment with Git, Github Actions for autodeployment, composer for managing plugins',
+            'Added integrations, such as Google Search Console, Contact Form 7 with Apix and Pipedrive',
+            'Added functionality to track CF7 templates and settings with Git',
+            'Fixed bugs, added other smaller improvements',
+          ],
+          sites: [
+            'https://boostylabs.com/',
+          ]
+        },
         {
           date: 'Dec 2023',
           company: {
@@ -67,11 +79,10 @@ export const pages = [
           },
           position: 'PHP/WordPress Developer', 
           description: [
-            'Wide maintenance of 8 corporate subdomains, implementing new functionality, pages, developing custom plugins',
-            'Implemented sorting of Case Studies and Testimonials based on client IP',
+            'Wide maintenance of 8 corporate subdomains, implementation of new functionality, pages, plugin development',
+            'Implemented sorting of Case Studies and Testimonials based on user\'s location',
             'Created a new content system, based on ACF Blocks',
             'Improved legacy Content Builder',
-            'Close communication with PMs, DevOps, SEO specialists, designers, and other developers',
           ],
           sites: [
             'https://redwerk.com/',
@@ -79,6 +90,16 @@ export const pages = [
             'https://bugcrawl.qawerk.com/',
           ]
         },
+      ],
+    }
+  ],
+  
+  // Page 2
+  [
+    // work
+    {
+      type: 'Work',
+      data: [
         {
           date: 'Sep 2021 — Feb 2023',
           company: {
@@ -97,16 +118,6 @@ export const pages = [
             'https://www.wona.co.il/',
           ]
         },
-      ],
-    }
-  ],
-  
-  // Page 2
-  [
-    // work
-    {
-      type: 'Work',
-      data: [
         {
           date: 'Nov 2020 — Aug 2021',
           company: {
@@ -204,6 +215,16 @@ export const pages = [
             'WordPress setup',
           ],
         },
+      ],
+    }
+  ],
+
+  // Page 3
+  [
+    // projects
+    {
+      type: 'Projects',
+      data: [
         {
           date: 'Aug 2022',
           project: {
@@ -239,11 +260,8 @@ export const pages = [
           ],
         },
       ],
-    }
-  ],
+    },
 
-  // Page 3
-  [
     // education
     {
       type: 'Education',
