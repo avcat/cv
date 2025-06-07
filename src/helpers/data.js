@@ -16,19 +16,19 @@ export const pages = [
       title: 'Contacts',
       data: [
         {
-          url: 'https://dub.sh/zMqXUw2',
+          url: 'mailto:arkadii.vodolazskyi@pm.me',
           icon: 'proton', 
-          title: 'Email', 
+          title: 'arkadii.vodolazskyi@pm.me', 
         },
         {
           url: 'https://www.linkedin.com/in/avcat',
           icon: 'linkedin', 
-          title: 'LinkedIn', 
+          title: 'Arkadii Vodolazskyi', 
         },
         {
           url: 'https://github.com/avcat',
           icon: 'github', 
-          title: 'GitHub', 
+          title: 'avcat', 
         },
       ]
     },
@@ -46,10 +46,10 @@ export const pages = [
           },
           position: 'WordPress Developer', 
           description: [
-            'Created project environment with Git, Github Actions for autodeployment, composer for managing plugins',
+            'Created build and deploy infrastracture for the legacy project: Git, CD on Github Actions, composer, vite',
+            'Created ACF Blocks plugin for the legacy project, that allows to use ACF Blocks in Git-friendly way',
             'Added integrations, such as Google Search Console, Contact Form 7 with Apix and Pipedrive',
             'Added functionality to track CF7 templates and settings with Git',
-            'Fixed bugs, added other smaller improvements',
           ],
           sites: [
             'https://boostylabs.com/',
@@ -63,13 +63,13 @@ export const pages = [
           },
           position: 'PHP/WordPress Developer', 
           description: [
-            'Rebuilt project module bundler from scratch: Gulp, sharp, PostCSS, terser.',
-            'Rebuilt Admin panel, that is used for content management.',
-            'Added helper functions for common tasks: data structuring, formatting, working with embeds.',
-            'Creating sites for American storage facilities with Codeigniter',
-            'Developing functionality and maintaining a product site on WordPress + WPEngine',
-            'Maintaining 20+ environments on WPEngine',
+            'Created and maintained the whole front-end and back-end part of diamondleague.com: WordPress, Blade, Tailwind, lots of back-end functionality and integrations with different APIs',
+            'Created 20+ sites for American storage facilities with Codeigniter 3',
+            'Maintained 20+ WordPress environments on WPEngine',
           ],
+          sites: [
+            'https://www.diamondleague.com/',
+          ]
         },
         {
           date: 'Mar 2023 — Dec 2023',
@@ -146,7 +146,7 @@ export const pages = [
     // projects
     {
       type: 'Projects',
-      title: 'Projects',
+      title: 'Personal Projects',
       data: [
         {
           date: 'Dec 2023',
