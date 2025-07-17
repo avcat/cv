@@ -30,11 +30,11 @@
   }
 
   h1 {
-    @apply font-Prompt text-lg-cv font-semibold;
+    @apply font-Prompt text-base-cv lg:text-lg-cv font-semibold;
   }
 
   h2 {
-    @apply font-Prompt text-lg-cv;
+    @apply font-Prompt text-base-cv lg:text-lg-cv;
   }
 
   h3 {
@@ -64,7 +64,7 @@
   }
 
   .list-pills {
-    @apply list-none flex flex-wrap items-center gap-1.5;
+    @apply list-none flex flex-wrap items-center gap-1.5 px-1 sm:px-3 pb-0 sm:pb-2 pt-2;
 
     li {
       @apply px-1.5 bg-dimmed rounded-lg shadow;
@@ -75,8 +75,12 @@
     }
   }
 
+  .hidden-pills {
+    @apply hidden md:flex;
+  }
+
   .btn-print {
-    @apply fixed z-50 bottom-3 left-[50%] translate-x-[-50%] tr bg-blue-600 hover:bg-blue-800 text-xl text-slate-100 py-2.5 px-3 uppercase font-Prompt tracking-wider font-semibold shadow-slate-800 shadow-lg rounded-xl flex gap-2 items-center;
+    @apply fixed z-50 bottom-3 left-[50%] translate-x-[-50%] tr bg-blue-600 hover:bg-blue-800 hover:hover:scale-110 text-xl text-slate-100 py-2.5 px-3 uppercase font-Prompt tracking-wider font-semibold shadow-slate-800 shadow-lg rounded-xl flex gap-2 items-center;
   }
 
   .bg-grad-1 {
@@ -85,7 +89,7 @@
   }
 
   .navigation {
-    @apply fixed left-0 top-0 translate-x-2 translate-y-4 uppercase grid gap-2 justify-items-start;
+    @apply fixed left-0 top-[3mm] translate-x-2 translate-y-4 uppercase gap-2 justify-items-start hidden xl:grid;
 
     a {
       @apply font-semibold px-1.5 text-white rounded;
@@ -104,6 +108,14 @@
     &:target + div {
       animation: highlight 1.5s 0.1s ease-out forwards;
     }
+  }
+
+  .description-column-1 {
+    @apply px-1 sm:px-3 pb-0 sm:pb-2 pt-2 col-start-1 col-end-3 sm:col-start-1 sm:col-end-2;
+  }
+
+  .description-column-2 {
+    @apply px-1 sm:px-3 pb-0 sm:pb-2 pt-2 row-start-3 sm:row-start-2 col-start-1 col-end-3 sm:col-start-2 sm:col-end-3 leading-[1.4] sm:leading-[1.5];
   }
 }
 

@@ -13,7 +13,7 @@ const { data, title } = Astro.props;
 
 <div>
   {data.map(item => (
-    <div class="grid grid-cols-cv-work mt-3">
+    <div class="grid grid-cols-cv-work-mobile sm:grid-cols-cv-work mt-1 sm:mt-3">
       <time class="px-3 py-2 content-center bg-dimmed rounded-s-lg" datetime={item.date}>
         {item.date}
       </time>
@@ -29,7 +29,7 @@ const { data, title } = Astro.props;
         </p>
       </div>
 
-      <div class="px-3 py-2">
+      <div class="description-column-1 flex flex-wrap gap-x-3 sm:block">
         {item.sites && item.sites.map(site => (
           <a class="block" href={site} target="_blank">
             {sanitizeUrl(site)}
@@ -37,7 +37,7 @@ const { data, title } = Astro.props;
         ))}
       </div>
 
-      <div class="px-3 py-2">
+      <div class="description-column-2">
         <ul>
           {item.description && item.description.filter(Boolean).map(item => (
             <li>

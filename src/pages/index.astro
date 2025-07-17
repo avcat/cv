@@ -27,7 +27,7 @@ import { pages } from '@helpers/data.js';
   <Nav />
   
   {pages && pages.length && (
-    <div class="py-[8mm] print:py-0 font-Kanit text-base-cv font-light">
+    <div class="print:py-0 font-Kanit text-sm-cv lg:text-base-cv font-light">
       {pages.map(sections => <PageA4 {sections} />)}
     </div>
   )}

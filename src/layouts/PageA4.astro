@@ -29,9 +29,10 @@ const componentsMap = {
 };
 
 const { class: className, sections } = Astro.props;
+const thisClassName = className ? `${className} ` : '';
 ---
 {sections && sections.length && (
-  <div class={`${className} mx-auto my-[8mm] first:mt-0 h-a4 w-a4 bg-white p-[8mm] shadow-lg relative`}>
+  <div class={`${thisClassName}mx-auto my-[4mm] lg:my-[8mm] h-a4 w-a4 max-w-[95%] bg-white p-[4mm] lg:p-[8mm] shadow-lg relative rounded-sm`}>
     {sections.map(section => {
       const Section = componentsMap[section.type];
       return <Section data={section.data} title={section.title} />;

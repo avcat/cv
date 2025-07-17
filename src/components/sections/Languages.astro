@@ -12,12 +12,12 @@ const { data, title } = Astro.props;
 
 <div>
   {data.map(item => (
-    <div class="grid grid-cols-cv-work mt-3 items-center">
+    <div class="grid grid-cols-cv-work-mobile sm:grid-cols-cv-work mt-1 sm:mt-3 items-center">
       <div class="px-3 py-2">
         {item.name}
       </div>
 
-      <ul class="list-pills px-3 py-2">
+      <ul class="list-pills">
         {item.certificates.map(certificate => (
           <li>
             {certificate.url ? (

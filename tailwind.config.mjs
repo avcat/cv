@@ -26,6 +26,7 @@ export default {
       },
       gridTemplateColumns: {
         'cv-work': 'minmax(0, 5.5cm) 1fr',
+        'cv-work-mobile': 'minmax(0, 3cm) 1fr',
       },
       colors: {
         'dimmed': '#eee',
