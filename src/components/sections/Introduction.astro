@@ -5,9 +5,9 @@ interface Props {
 import image from '@public/av.jpg';
 const { name, position } = Astro.props.data;
 ---
-<div>
+<div class="print:mt-[4mm]">
   <img
-    class="absolute top-[4mm] lg:top-[8mm] right-[4mm] lg:right-[8mm] shadow-md print:shadow-none object-contain rounded-md hidden sm:block max-w-[140px] lg:max-w-full"
+    class="absolute top-[4mm] lg:top-[8mm] print:top-[10mm] right-[4mm] lg:right-[8mm] shadow-md print:shadow-none object-contain rounded-md hidden sm:block max-w-[140px] lg:max-w-full"
     src={image.src}
     alt="Arkadii Vodolazskyi"
     width={180}

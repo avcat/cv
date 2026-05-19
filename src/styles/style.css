@@ -150,18 +150,19 @@
 }
 
 @page {
-  size: A4 portrait ;
+  size: A4 portrait;
   margin: 0;
   padding: 0;
 }
 
 @media print {
   /* 
-    Make sure the browser respects background colors while printing. 
+    Make sure the browser respect background colors while printing. 
     https://developer.mozilla.org/en-US/docs/Web/CSS/print-color-adjust
   */
   body {
     print-color-adjust: exact;
+    background: none !important;
   }
 
   .navigation,

@@ -39,31 +39,27 @@ export const pages = [
       title: 'Work Experience',
       data: [
         {
-          date: 'Dec 2024',
+          date: 'Mar 2026',
           company: {
-            title: 'Boostylabs',
-            url: 'https://boostylabs.com/',
+            title: 'Drewl',
+            url: 'https://drewl.com/',
           },
-          position: 'WordPress Developer', 
+          position: 'Full-Stack Engineer', 
           description: [
-            'Created build and deploy infrastracture for the legacy project: Git, CD on Github Actions, composer, vite',
-            'Created ACF Blocks plugin for the legacy project, that allows to use ACF Blocks in Git-friendly way',
-            'Added integrations, such as Google Search Console, Contact Form 7 with Apix and Pipedrive',
-            'Added functionality to track CF7 templates and settings with Git',
+            'Support and maintenance of existing sites on WordPress, Nuxt, Laravel, Bigcommerce, Strapi, Webflow',
+            'Created a WordPress site with custom builder',
           ],
-          sites: [
-            'https://boostylabs.com/',
-          ]
         },
+
         {
-          date: 'Dec 2023',
+          date: 'Dec 2023 — Mar 2026',
           company: {
             title: 'Limestone Digital',
             url: 'https://limestonedigital.com/',
           },
           position: 'PHP/WordPress Developer', 
           description: [
-            'Created and maintained the whole front-end and back-end part of diamondleague.com: WordPress, Blade, Tailwind, lots of back-end functionality and integrations with different APIs',
+            'Created and maintained a big project on WordPress, Blade, Tailwind, lots of back-end functionality and integrations with different APIs',
             'Created 20+ sites for American storage facilities with Codeigniter 3',
             'Maintained 20+ WordPress environments on WPEngine',
           ],
@@ -71,6 +67,34 @@ export const pages = [
             'https://www.diamondleague.com/',
           ]
         },
+
+        {
+          date: 'Dec 2024 — Dec 2025',
+          company: {
+            title: 'Boostylabs',
+            url: 'https://boostylabs.com/',
+          },
+          position: 'WordPress Developer', 
+          description: [
+            'Created CI/CD infrastructure for the legacy project: Git, CD on Github Actions, composer, vite',
+            'Created ACF Blocks plugin for the legacy project, that allows to use ACF Blocks in Git-friendly way',
+            'Added integrations, such as Google Search Console, Contact Form 7 with Apix and Pipedrive',
+            'Added functionality to track CF7 templates and configs in Git',
+          ],
+          sites: [
+            'https://boostylabs.com/',
+          ]
+        },
+      ],
+    }
+  ],
+  
+  // Page 2
+  [
+    // work
+    {
+      type: 'Work',
+      data: [
         {
           date: 'Mar 2023 — Dec 2023',
           company: {
@@ -90,16 +114,7 @@ export const pages = [
             'https://bugcrawl.qawerk.com/',
           ]
         },
-      ],
-    }
-  ],
-  
-  // Page 2
-  [
-    // work
-    {
-      type: 'Work',
-      data: [
+
         {
           date: 'Sep 2021 — Feb 2023',
           company: {
@@ -118,6 +133,7 @@ export const pages = [
             'https://www.wona.co.il/',
           ]
         },
+
         {
           date: 'Nov 2020 — Aug 2021',
           company: {
@@ -166,6 +182,7 @@ export const pages = [
             'Component-based approach, easy to use and maintain, Git-friendly',
           ],
         },
+
         {
           date: 'Apr 2023',
           project: {
@@ -182,6 +199,16 @@ export const pages = [
             'Weather widget',
           ],
         },
+      ],
+    }
+  ],
+
+  // Page 3
+  [
+    // projects
+    {
+      type: 'Projects',
+      data: [
         {
           date: 'Dec 2022',
           project: {
@@ -198,6 +225,7 @@ export const pages = [
             'Article navigation, footnotes, own design and parser',
           ],
         },
+
         {
           date: 'Nov 2022',
           project: {
@@ -215,16 +243,7 @@ export const pages = [
             'WordPress setup',
           ],
         },
-      ],
-    }
-  ],
 
-  // Page 3
-  [
-    // projects
-    {
-      type: 'Projects',
-      data: [
         {
           date: 'Aug 2022',
           project: {
@@ -240,6 +259,7 @@ export const pages = [
             'Simple chat-like app, similar to Telegram',
           ],
         },
+
         {
           date: 'Nov 2021',
           project: {
@@ -304,17 +324,17 @@ export const pages = [
             'WordPress',
             'WPEngine',
             'Node.js',
+            'Docker',
           ],
         },
         {
           domain: 'Frameworks',
           list: [
-            'Vue',
-            'SvelteKit',
+            'Vue/Nuxt',
+            'Svelte/SvelteKit',
             'React',
             'Laravel',
-            'Symfony',
-            'Codeigniter',
+            'Symfony/Codeigniter',
           ],
         },
         {
@@ -328,7 +348,10 @@ export const pages = [
         },
       ],
     },
+  ],
 
+  // Page 4
+  [
     // languages
     {
       type: 'Languages',
@@ -348,12 +371,10 @@ export const pages = [
             {
               level: 'C1',
               year: 2024,
-              url: 'https://api.busuu.com/anon/certificates/89305c1cd03164955fdc424af10feed6?lang=en',
             },
             {
               level: 'B1',
               year: 2013,
-              url: 'https://drive.proton.me/urls/VYP2ZJ55FC#HMR70KOMzXet',
             },
           ],
         },
@@ -363,17 +384,14 @@ export const pages = [
             {
               level: 'A2',
               year: 2024,
-              url: 'https://drive.proton.me/urls/8HFWSDT5J0#ygYuk30FYQnV',
             },
             {
               level: 'A2',
               year: 2023,
-              url: 'https://drive.proton.me/urls/G6G9044G1G#EnxiVayCMFqS',
             },
             {
               level: 'A1',
               year: 2023,
-              url: 'https://drive.proton.me/urls/J4BNFS1VE8#goOGRUjyHMc3',
             },
           ],
         },
@@ -383,11 +401,10 @@ export const pages = [
             {
               level: 'A2',
               year: 2017,
-              url: 'https://drive.proton.me/urls/Y41YKQ68Y8#HclW3HFxCWBA',
             },
           ],
         },
       ],
     }
-  ],
+  ]
 ];
