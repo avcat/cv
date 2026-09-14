@@ -38,6 +38,18 @@ export const pages = [
       type: 'Work',
       title: 'Work Experience',
       data: [
+        {
+          date: 'Mar 2026',
+          company: {
+            title: 'Drewl',
+            url: 'https://drewl.com/',
+          },
+          position: 'Full-Stack Engineer', 
+          description: [
+            'Support and maintenance of existing sites on WordPress, Nuxt, Laravel, Bigcommerce, Strapi, Webflow',
+            'Created a WordPress site with custom builder',
+          ],
+        },
 
         {
           date: 'Dec 2023 — Mar 2026',
@@ -73,7 +85,16 @@ export const pages = [
             'https://boostylabs.com/',
           ]
         },
-
+      ],
+    }
+  ],
+  
+  // Page 2
+  [
+    // work
+    {
+      type: 'Work',
+      data: [
         {
           date: 'Mar 2023 — Dec 2023',
           company: {
@@ -94,17 +115,6 @@ export const pages = [
           ]
         },
 
-      ],
-    }
-  ],
-  
-  // Page 2
-  [
-    // work
-    {
-      type: 'Work',
-      data: [
-        
         {
           date: 'Sep 2021 — Feb 2023',
           company: {
@@ -189,7 +199,16 @@ export const pages = [
             'Weather widget',
           ],
         },
+      ],
+    }
+  ],
 
+  // Page 3
+  [
+    // projects
+    {
+      type: 'Projects',
+      data: [
         {
           date: 'Dec 2022',
           project: {
@@ -224,16 +243,6 @@ export const pages = [
             'WordPress setup',
           ],
         },
-      ],
-    }
-  ],
-
-  // Page 3
-  [
-    // projects
-    {
-      type: 'Projects',
-      data: [
 
         {
           date: 'Aug 2022',
@@ -339,7 +348,10 @@ export const pages = [
         },
       ],
     },
+  ],
 
+  // Page 4
+  [
     // languages
     {
       type: 'Languages',
@@ -394,6 +406,5 @@ export const pages = [
         },
       ],
     }
-  ],
-
+  ]
 ];
